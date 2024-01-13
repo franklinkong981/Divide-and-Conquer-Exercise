@@ -1,6 +1,6 @@
-function countZeroes(array_name) {
-    /* Given an array of 1s and 0s which has all 1s first followed by all 0s, write a function called countZeroes, which 
+/* Given an array of 1s and 0s which has all 1s first followed by all 0s, write a function called countZeroes, which 
     returns the number of zeroes in the array. */
+function countZeroes(array_name) {
     if (array_name.length === 0) return 0; //If array is empty, there are no 0s.
     if (array_name[array_name.length - 1] === 1) return 0; //If last value in array is 1, there are no 0s.
     if (array_name[0] === 0) return array_name.length; //If first value in array is 0, then every value is a 0.
@@ -8,7 +8,14 @@ function countZeroes(array_name) {
     //If we reach this point, there are both 1s and 0s in the array. Now we just find the index of the first 0.
     let leftIndex = 0;
     let rightIndex = array_name.length - 1;
-    while (rightIndex - leftIndex > 1)
+    while (rightIndex - leftIndex > 1) {
+        let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+        if (array_name[middleIndex] === 1) { leftIndex = middleIndex; }
+        else { rightIndex = middleIndex; } //Otherwise value at middleIndex is 0.
+    }
+
+    //Now value at leftIndex is at the last 1 in the array, value at rightIndex is the first 0 in the array.
+    return (array_name.length - 1) - leftIndex;
 }
 
 console.log("Test case 1 (expected 2): " + countZeroes([1, 1, 1, 1, 0, 0]));
