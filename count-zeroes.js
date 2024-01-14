@@ -18,6 +18,7 @@ function countZeroes(array_name) {
     return (array_name.length - 1) - leftIndex;
 }
 
+console.log("Count Zeros:")
 console.log("Test case 1 (expected 2): " + countZeroes([1, 1, 1, 1, 0, 0]));
 console.log("Test case 2 (expected 4): " + countZeroes([1, 0, 0, 0, 0]));
 console.log("Test case 3 (expected 3): " + countZeroes([0, 0, 0]));

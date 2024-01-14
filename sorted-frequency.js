@@ -42,6 +42,7 @@ function sortedFrequency(arrayName, target) {
     
 }
 
+console.log("Sorted Frequency")
 console.log("Test case 1 (expected 4): " + sortedFrequency([1, 1, 2, 2, 2, 2, 3], 2));
 console.log("Test case 2 (expected 1): " + sortedFrequency([1, 1, 2, 2, 2, 2, 3], 3));
 console.log("Test case 3 (expected 2): " + sortedFrequency([1, 1, 2, 2, 2, 2, 3], 1));
